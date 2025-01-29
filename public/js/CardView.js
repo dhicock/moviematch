@@ -21,7 +21,7 @@ export class CardView {
       this.rate(e.data, this.getAnimation(e.data ? 'right' : 'left'))
     )
 
-    const { title, type, art, year, guid } = this.movieData
+    const { title, type, art, year, guid, summary, rating, director, key } = this.movieData
     node.dataset.guid = guid
 
     const srcSet = [
@@ -35,9 +35,14 @@ export class CardView {
       <img class="poster" src="${
         srcSet[0]
       }" decode="async" srcset="${srcSet.join(', ')}" alt="${title} poster" />
-      <p>${title}${type === 'movie' ? ` (${year})` : ''}</p>
+      <p>${title}${type === 'movie' ? ` (${year})` : ''}
+      <br/><span class="summary">${summary}</span>
+      <br/>
+      <br/><span class="extra">${rating}⭐</span>
+      </p>
     `
     cardList.appendChild(node)
+    console.log(this.movieData);
   }
 
   async rate(wantsToWatch, animation) {
