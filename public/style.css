@@ -124,12 +124,22 @@ body {
   font-size: 1rem;
 }
 
-.card span.summary{
+.card span.title{
+  font-size: 2rem;
+}
+
+.card span.summary, span.rating, span.duration{
   font-weight: normal;
 }
 
-.card span.extra{
-  font-weight: normal;
+.card span.rating img {
+  vertical-align: text-bottom;
+}
+
+.card span.contentRating{
+  font-weight: bold;
+  border: 2px solid white;
+  padding: 0px 6px;
 }
 
 .card-stack {
